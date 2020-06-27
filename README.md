@@ -11,3 +11,12 @@ make infra;
 ```
 make run
 ```
+
+## Run OpenAPI Generator
+```
+docker run --rm -v ${PWD}:/local openapitools/openapi-generator-cli generate \
+    -i /local/spec.yml \
+    -g k6 \
+    -o /local/k6-test/
+    --skip-validate-spec
+```
